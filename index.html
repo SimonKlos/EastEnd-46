@@ -11,10 +11,10 @@
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
   <header class="site-header" data-header>
     <a class="brand" href="#start" aria-label="EastEnd46 Startseite">
-      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20"/><path d="M24 4v40M4 24h40M10 10l28 28M38 10 10 38"/><path class="east" d="M24 24h20l-8-4m8 4-8 4"/></svg>
+      <svg class="brand-mark" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="23"/><circle cx="28" cy="28" r="3" fill="currentColor" stroke="none"/><path d="M28 5v46M5 28h46M11.7 11.7l32.6 32.6M44.3 11.7 11.7 44.3"/><path class="east" d="M28 28h23l-9-5m9 5-9 5"/><path class="east" d="M28 5l-3 8m3-8 3 8"/></svg>
       <span><strong>EastEnd46</strong><small>Beratung &amp; Beteiligung</small></span>
     </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><b>Menü</b></button>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="menu-icon"><i></i><i></i></span><b>Menü</b></button>
     <nav id="site-nav" class="site-nav" aria-label="Hauptnavigation">
       <a href="#ueber">Über uns</a><a href="#leistungen">Leistungen</a><a href="#kontakt">Kontakt</a>
     </nav>
@@ -28,6 +28,7 @@
         <div class="skyline-fallback"></div>
       </div>
       <div class="hero-overlay"></div>
+  <div class="hero-lines" aria-hidden="true"><span></span><span></span><span></span></div>
       <div class="hero-content container">
         <p class="eyebrow light">Frankfurt am Main &nbsp;·&nbsp; Seit 2024</p>
         <h1>Substanz,<br><em>die bleibt.</em></h1>
@@ -53,10 +54,12 @@
 
     <section id="kontakt" class="contact section container reveal">
       <div class="section-label"><span>03</span><span>Kontakt</span></div><div class="contact-grid"><div><h2>Ein guter Anfang<br>ist ein <em>Gespräch.</em></h2><p class="large-copy">Sie möchten ein Vorhaben teilen, eine Frage besprechen oder herausfinden, ob die Chemie stimmt? Schreiben Sie uns.</p><div class="contact-meta"><span>Frankfurt am Main</span><a href="mailto:dialog@eastend46.de">dialog@eastend46.de</a></div></div>
+  <div class="n8n-note" aria-hidden="true">Webhook-ready · n8n</div>
         <form class="contact-form" data-contact-form novalidate><div class="form-row"><label>Name <input name="name" autocomplete="name" required></label><label>Unternehmen <input name="company" autocomplete="organization"></label></div><div class="form-row"><label>E-Mail <input type="email" name="email" autocomplete="email" required></label><label>Anliegen <select name="topic" required><option value="" selected disabled>Bitte wählen</option><option>Beratung</option><option>Beteiligung</option><option>Sonstiges</option></select></label></div><label>Nachricht <textarea name="message" rows="5" required></textarea></label><label class="honeypot" aria-hidden="true">Website <input name="website" tabindex="-1" autocomplete="off"></label><label class="consent"><input type="checkbox" name="consent" required><span>Ich stimme der Verarbeitung meiner Angaben zur Kontaktaufnahme zu.</span></label><button class="button button-dark" type="submit">Nachricht senden <span>↗</span></button><div class="form-status" role="status" aria-live="polite"></div></form>
       </div>
     </section>
   </main>
   <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="#start"><strong>EastEnd46</strong></a><p>© 2024 EastEnd46 Beratungs- und Beteiligungsgesellschaft</p><div><a href="#">Impressum</a><a href="#">Datenschutz</a></div></div></footer>
+  <script src="config.js"></script>
   <script src="script.js"></script>
 </body></html>

@@ -14,9 +14,32 @@ Dann `http://localhost:4173` öffnen.
 
 Den echten, lizenzierten Clip unter `assets/video/skyline.mp4` ablegen. Der HTML-Code enthält den markierten `SWAP-SLOT`; bis dahin zeigt der Poster-Fallback eine stilisierte Skyline.
 
-## Kontakt-Webhook
+## Kontaktformular mit n8n
 
-In `script.js` die Konstante `WEBHOOK_URL` setzen. Leer = Demo-Erfolg ohne Versand. Gesetzt = JSON-POST mit `name`, `company`, `email`, `topic`, `message`, `consent`.
+Die Webhook-Konfiguration liegt zentral in `config.js`:
+
+```js
+window.EASTEND_CONFIG = {
+  webhookUrl: 'https://DEIN-N8N-HOST/webhook/eastend46-contact'
+};
+```
+
+Das Formular sendet per `POST` JSON an n8n. Payload:
+
+```json
+{
+  "name": "…",
+  "company": "…",
+  "email": "…",
+  "topic": "Beratung | Beteiligung | Sonstiges",
+  "message": "…",
+  "consent": "on",
+  "source": "eastend46-website",
+  "submittedAt": "ISO-8601-Zeitstempel"
+}
+```
+
+Im n8n Webhook-Node sollten `POST` und `Response: Immediately` aktiviert werden. Für eine produktive Website zusätzlich CORS auf die Vercel-Domain begrenzen und die Validierung im n8n-Workflow wiederholen. Die URL ist absichtlich in einer separaten Datei, damit sie ohne Änderung am Formular ausgetauscht werden kann.
 
 ## Lizenzfreie Footage-Quellen
 
