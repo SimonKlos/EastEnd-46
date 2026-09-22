@@ -12,7 +12,13 @@ Dann `http://localhost:4173` öffnen.
 
 ## Skyline-Video einsetzen
 
-Den echten, lizenzierten Clip unter `assets/video/skyline.mp4` ablegen. Der HTML-Code enthält den markierten `SWAP-SLOT`; bis dahin zeigt der Poster-Fallback eine stilisierte Skyline.
+Den aktuell hochgeladenen Clip bitte in diesem Pfad ablegen:
+
+```text
+assets/video/assetsvideoskyline.mp4.mp4
+```
+
+Der Dateiname ist ungewöhnlich, aber im HTML exakt so eingebunden.
 
 ## Kontaktformular mit n8n
 
