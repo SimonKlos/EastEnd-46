@@ -1,4 +1,4 @@
 window.EASTEND_CONFIG = {
-  // n8n Webhook-URL hier eintragen. Beispiel: 'https://n8n.example.com/webhook/eastend46-contact'
-  webhookUrl: ''
+  // Production-URL des n8n-Webhooks für das Kontaktformular.
+  webhookUrl: 'https://eintrachtfrankfurt.app.n8n.cloud/webhook/eastend46-contact'
 };

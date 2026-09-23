@@ -20,37 +20,67 @@ assets/video/assetsvideoskyline.mp4.mp4
 
 Der Dateiname ist ungewöhnlich, aber im HTML exakt so eingebunden.
 
-## Kontaktformular mit n8n
+## Kontaktformular und Anfragen-Workflow
 
-Die Webhook-Konfiguration liegt zentral in `config.js`:
+Das Kontaktformular sendet jede Anfrage an einen Webhook in **n8n** (n8n Cloud). Die Production-URL steht in `config.js`:
 
 ```js
 window.EASTEND_CONFIG = {
-  webhookUrl: 'https://DEIN-N8N-HOST/webhook/eastend46-contact'
+  webhookUrl: 'https://eintrachtfrankfurt.app.n8n.cloud/webhook/eastend46-contact'
 };
 ```
 
-Das Formular sendet per `POST` **`multipart/form-data`** an n8n (kein JSON, damit ein Anhang mitgeschickt werden kann). Felder:
+Ist `webhookUrl` leer, zeigt das Formular nur einen Demo-Erfolg an und sendet nichts.
+
+### So soll der Workflow funktionieren
+
+Der Workflow ist in Arbeit und wird direkt in n8n gebaut. Geplant ist:
+
+1. **Webhook** nimmt die Anfrage an und antwortet der Website sofort. Die Website wartet nicht auf die Bearbeitung.
+2. **Ein KI-Agent** (Claude Sonnet 5 von Anthropic) liest die Anfrage:
+   - ordnet sie einer Kategorie zu: Beteiligung, Strategie, Finanzierung, Übernahme & Zusammenschluss, Unternehmensnachfolge, Kooperation & Netzwerk, Bewerbung, Dienstleister & Vertrieb, Presse, Sonstiges oder Spam
+   - erkennt Spam
+   - vergibt eine Priorität (Hoch, Mittel, Niedrig) und eine Relevanz von 0 bis 100
+   - schreibt eine Zusammenfassung und empfiehlt einen nächsten Schritt
+3. Der Agent nutzt dabei drei Werkzeuge:
+   - **Perplexity** recherchiert öffentliche Informationen zum anfragenden Unternehmen, nicht zu Privatpersonen.
+   - **Notion** speichert jede Anfrage in der Datenbank „EastEnd46 · Anfragen“, auch Spam.
+   - **Gmail** schickt nur bei Priorität **Hoch** und kein Spam eine formatierte Zusammenfassung an den Inhaber, mit Link zum Notion-Eintrag. Später wird Gmail durch ein Outlook-Postfach mit EastEnd46-Adresse ersetzt.
+
+| Werkzeug | Aufgabe |
+|---|---|
+| n8n Cloud | Webhook und Ablauf |
+| Anthropic Claude Sonnet 5 (`claude-sonnet-5`) | KI-Agent: Einordnung, Priorisierung, Zusammenfassung |
+| Perplexity | Recherche zum Unternehmen |
+| Notion | Datenbank aller Anfragen |
+| Gmail (MVP), später Outlook | E-Mail an den Inhaber bei hoher Priorität |
+
+Hinweis: Sonnet 5 akzeptiert keine Sampling-Parameter. Im Anthropic-Chat-Model-Node deshalb `temperature`, `top_p` und `top_k` nicht setzen.
+
+### Was die Website sendet
+
+`POST` als **`multipart/form-data`**:
 
 | Feld | Inhalt |
 |---|---|
 | `name` | Pflicht |
-| `company` | optional |
+| `company` | Pflicht |
 | `email` | Pflicht |
-| `topic` | `Beratung` \| `Beteiligung` \| `Sonstiges` |
+| `topic` | Pflicht: `Beratung` \| `Beteiligung` \| `Sonstiges` |
 | `message` | Pflicht |
-| `consent` | `on` |
+| `consent` | Pflicht: `on` |
 | `source` | `eastend46-website` |
 | `submittedAt` | ISO-8601-Zeitstempel |
-| `attachment` | optionale Datei: PDF, DOCX, XLSX, PPTX, JPG oder PNG, max. 2 MB (wird im Browser geprüft, muss in n8n erneut geprüft werden) |
+| `attachment` | optional: eine Datei (PDF, DOCX, XLSX, PPTX, JPG oder PNG), max. 2 MB |
 
-Das Honeypot-Feld `website` wird nicht mitgesendet. In n8n liegen die Textfelder unter `$json.body.*` und die Datei als Binärdaten unter `attachment`.
+In n8n liegen die Textfelder unter `$json.body.*` und die Datei als Binärdaten unter `attachment`. Das Honeypot-Feld `website` wird nicht mitgesendet. Die Pflichtfelder und die Datei prüft der Browser. Weil der Webhook öffentlich erreichbar ist, sollte n8n sie noch einmal prüfen.
 
-Die Website erwartet als Antwort JSON: `{ "ok": true }` bei Erfolg oder Status 400 mit `{ "ok": false, "error": "…" }`. Der Fehlertext wird dem Besucher direkt angezeigt.
+### Was die Website als Antwort erwartet
 
-Der fertige Workflow liegt in `n8n/` (Import-Anleitung in `n8n/README.md`).
+- Status 2xx: Erfolgsmeldung. Ein JSON-Body wie `{ "ok": true }` ist optional.
+- Status 4xx/5xx oder `{ "ok": false, "error": "…" }`: Fehlermeldung. Ein mitgelieferter `error`-Text wird dem Besucher direkt angezeigt.
 
-Im n8n Webhook-Node sollten `POST` und `Response: Using 'Respond to Webhook' Node` aktiviert werden. Für eine produktive Website zusätzlich CORS auf die Vercel-Domain begrenzen und die Validierung im n8n-Workflow wiederholen. Die URL ist absichtlich in einer separaten Datei, damit sie ohne Änderung am Formular ausgetauscht werden kann.
+In n8n muss der Webhook **aktiv** sein, damit die Production-URL erreichbar ist. Unter *Allowed Origins (CORS)* muss die Website-Domain erlaubt sein, sonst blockiert der Browser die Antwort.
 
 ## Lizenzfreie Footage-Quellen
 
