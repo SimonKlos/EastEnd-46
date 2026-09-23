@@ -57,3 +57,7 @@ Vor Verwendung die konkrete Clip-Lizenz prüfen:
 - [Pixabay Videos](https://pixabay.com/videos/) — Pixabay Content License, konkrete Asset-Bedingungen prüfen.
 
 Keine Zahlen, Kunden, Renditen oder Track-Records sind erfunden; Inhalte sind bewusst generisch gehalten.
+
+## Versionen
+
+Vor jeder Änderung wird der vorherige Code-Stand unter `versions/vN/` abgelegt (siehe `versions/README.md`). Die aktuelle Fassung liegt immer im Hauptverzeichnis und wird von Vercel ausgeliefert.
