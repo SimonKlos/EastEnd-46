@@ -30,22 +30,25 @@ window.EASTEND_CONFIG = {
 };
 ```
 
-Das Formular sendet per `POST` JSON an n8n. Payload:
+Das Formular sendet per `POST` **`multipart/form-data`** an n8n (kein JSON, damit ein Anhang mitgeschickt werden kann). Felder:
 
-```json
-{
-  "name": "…",
-  "company": "…",
-  "email": "…",
-  "topic": "Beratung | Beteiligung | Sonstiges",
-  "message": "…",
-  "consent": "on",
-  "source": "eastend46-website",
-  "submittedAt": "ISO-8601-Zeitstempel"
-}
-```
+| Feld | Inhalt |
+|---|---|
+| `name` | Pflicht |
+| `company` | optional |
+| `email` | Pflicht |
+| `topic` | `Beratung` \| `Beteiligung` \| `Sonstiges` |
+| `message` | Pflicht |
+| `consent` | `on` |
+| `source` | `eastend46-website` |
+| `submittedAt` | ISO-8601-Zeitstempel |
+| `attachment` | optionale Datei: PDF, DOCX, XLSX, PPTX, JPG oder PNG, max. 2 MB (wird im Browser geprüft, muss in n8n erneut geprüft werden) |
 
-Im n8n Webhook-Node sollten `POST` und `Response: Immediately` aktiviert werden. Für eine produktive Website zusätzlich CORS auf die Vercel-Domain begrenzen und die Validierung im n8n-Workflow wiederholen. Die URL ist absichtlich in einer separaten Datei, damit sie ohne Änderung am Formular ausgetauscht werden kann.
+Das Honeypot-Feld `website` wird nicht mitgesendet. In n8n liegen die Textfelder unter `$json.body.*` und die Datei als Binärdaten unter `attachment`.
+
+Die Website erwartet als Antwort JSON: `{ "ok": true }` bei Erfolg oder Status 400 mit `{ "ok": false, "error": "…" }`. Der Fehlertext wird dem Besucher direkt angezeigt.
+
+Im n8n Webhook-Node sollten `POST` und `Response: Using 'Respond to Webhook' Node` aktiviert werden. Für eine produktive Website zusätzlich CORS auf die Vercel-Domain begrenzen und die Validierung im n8n-Workflow wiederholen. Die URL ist absichtlich in einer separaten Datei, damit sie ohne Änderung am Formular ausgetauscht werden kann.
 
 ## Lizenzfreie Footage-Quellen
 
