@@ -55,6 +55,8 @@ Der Workflow ist in Arbeit und wird direkt in n8n gebaut. Geplant ist:
 | Notion | Datenbank aller Anfragen |
 | Gmail (MVP), später Outlook | E-Mail an den Inhaber bei hoher Priorität |
 
+**Anhänge:** Der Workflow verarbeitet Anhänge vorerst nicht. Der Agent sieht nur den Dateinamen. Wie PDFs später ausgelesen und in Notion abgelegt werden, steht in [`docs/plan-pdf-anhaenge.md`](docs/plan-pdf-anhaenge.md).
+
 Hinweis: Sonnet 5 akzeptiert keine Sampling-Parameter. Im Anthropic-Chat-Model-Node deshalb `temperature`, `top_p` und `top_k` nicht setzen.
 
 ### Was die Website sendet
