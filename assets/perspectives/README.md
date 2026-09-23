@@ -4,9 +4,9 @@ Die Dateinamen sind absichtlich stabil. Ein Motiv kann später ausgetauscht werd
 
 | Datei | Perspektive | Status |
 |---|---|---|
-| `perspective-01-finanzierung.jpg` | Finanzierung & Kapitalstruktur | eingesetzt |
-| `perspective-02-nachfolge.jpg` | Nachfolge & Eigentum | eingesetzt |
-| `perspective-03-ma.jpg` | Übernahmen & Zusammenschlüsse | noch offen; derzeit abstraktes Website-Motiv |
-| `perspective-04-ki.jpg` | KI & Entscheidungsqualität | eingesetzt |
+| `nachfolge.jpg` | Nachfolge & Eigentum | eingesetzt; Position 1 |
+| `ma-zusammenschluesse.jpg` | Übernahmen & Zusammenschlüsse | eingesetzt; Position 2 |
+| `ki.jpg` | KI & Entscheidungsqualität | eingesetzt; Position 3 |
+| `finanzierung.jpg` | Finanzierung & Kapitalstruktur | eingesetzt; Position 4 |
 
 Vor dem finalen öffentlichen Launch sollten Quelle und Nutzungsrecht jedes gelieferten Bildes dokumentiert werden.
