@@ -48,6 +48,8 @@ Das Honeypot-Feld `website` wird nicht mitgesendet. In n8n liegen die Textfelder
 
 Die Website erwartet als Antwort JSON: `{ "ok": true }` bei Erfolg oder Status 400 mit `{ "ok": false, "error": "…" }`. Der Fehlertext wird dem Besucher direkt angezeigt.
 
+Der fertige Workflow liegt in `n8n/` (Import-Anleitung in `n8n/README.md`).
+
 Im n8n Webhook-Node sollten `POST` und `Response: Using 'Respond to Webhook' Node` aktiviert werden. Für eine produktive Website zusätzlich CORS auf die Vercel-Domain begrenzen und die Validierung im n8n-Workflow wiederholen. Die URL ist absichtlich in einer separaten Datei, damit sie ohne Änderung am Formular ausgetauscht werden kann.
 
 ## Lizenzfreie Footage-Quellen
