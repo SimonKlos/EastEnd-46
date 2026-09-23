@@ -9,7 +9,7 @@ Schickt jemand über das Kontaktformular eine PDF mit, soll
 1. der KI-Agent den **Inhalt der PDF lesen** und in seine Bewertung einbeziehen, und
 2. die PDF **in Notion** in der Spalte „Anhang“ am Eintrag liegen.
 
-Andere Dateitypen (Word, Excel, PowerPoint, Bilder) werden vorerst nicht ausgewertet. Der Agent nennt nur ihren Dateinamen.
+Das Kontaktformular nimmt als Anhang nur PDF-Dateien an (max. 2 MB).
 
 ## Ausgangslage
 
@@ -154,13 +154,9 @@ Unter „Regeln“:
 | PDF mit Text (z. B. exportiertes Pitch Deck, Zahlen-PDF) | wird gelesen und in Notion abgelegt |
 | Eingescanntes PDF | wird in Notion abgelegt, Inhalt nicht lesbar |
 | Diagramme in PDFs | nur Beschriftungen lesbar |
-| Word, Excel, PowerPoint, Bilder | nicht ausgewertet, nicht hochgeladen, nur der Dateiname |
 
 ## Mögliche Erweiterungen
 
 - **Einfachere Ablage:** statt Schritt 3 bis 6 die PDF per Google-Drive-Node hochladen und im Notion-Tool nur den Drive-Link in „Anhang“ eintragen. Das ist ein Node statt vier, dafür liegt die Datei in Google Drive.
 - **Eingescannte PDFs und Diagramme lesen:** „PDF auslesen“ durch einen HTTP-Request an die Claude-API ersetzen. Claude liest PDFs inklusive Scans und Grafiken.
-- **Excel lesen:** zusätzlich „Extract From XLSX“ mit anschließendem Aggregate-Node („All Item Data“). Sonst läuft der Agent einmal pro Tabellenzeile.
-- **Bilder:** im Agenten die Option *Automatically Passthrough Binary Images* einschalten.
-- **Nur noch PDF zulassen:** auf der Website nur PDF erlauben, mit dem Hinweis „Pitch Deck oder Zahlen bitte als PDF“.
 - **Datenschutz:** vor dem Livegang in der Datenschutzerklärung ergänzen, dass Anhänge in Notion gespeichert und von der KI ausgewertet werden.

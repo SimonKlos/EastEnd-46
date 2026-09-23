@@ -65,7 +65,7 @@ Hinweis: Sonnet 5 akzeptiert keine Sampling-Parameter. Im Anthropic-Chat-Model-N
 
 | Feld | Inhalt |
 |---|---|
-| `name` | Pflicht |
+| `name` | Pflicht (im Formular mit * markiert) |
 | `company` | Pflicht |
 | `email` | Pflicht |
 | `topic` | Pflicht: `Beratung` \| `Beteiligung` \| `Sonstiges` |
@@ -73,9 +73,9 @@ Hinweis: Sonnet 5 akzeptiert keine Sampling-Parameter. Im Anthropic-Chat-Model-N
 | `consent` | Pflicht: `on` |
 | `source` | `eastend46-website` |
 | `submittedAt` | ISO-8601-Zeitstempel |
-| `attachment` | optional: eine Datei (PDF, DOCX, XLSX, PPTX, JPG oder PNG), max. 2 MB |
+| `attachment` | optional: eine PDF-Datei, max. 2 MB |
 
-In n8n liegen die Textfelder unter `$json.body.*` und die Datei als Binärdaten unter `attachment`. Das Honeypot-Feld `website` wird nicht mitgesendet. Die Pflichtfelder und die Datei prüft der Browser. Weil der Webhook öffentlich erreichbar ist, sollte n8n sie noch einmal prüfen.
+In n8n liegen die Textfelder unter `$json.body.*` und die Datei als Binärdaten unter `attachment`. Das Honeypot-Feld `website` wird nicht mitgesendet. Die Pflichtfelder und die Datei prüft die Website und zeigt freundliche Hinweise direkt am Feld. Nach dem Absenden erscheint eine Bestätigung auf der Seite (Häkchen-Animation, Hinweis, dass EastEnd46 sich bei passenden Anfragen meldet). Eine Bestätigungs-E-Mail an den Absender wird nicht verschickt. Weil der Webhook öffentlich erreichbar ist, sollte n8n sie noch einmal prüfen.
 
 ### Was die Website als Antwort erwartet
 
