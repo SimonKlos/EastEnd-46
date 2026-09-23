@@ -61,3 +61,11 @@ Keine Zahlen, Kunden, Renditen oder Track-Records sind erfunden; Inhalte sind be
 ## Versionen
 
 Vor jeder Änderung wird der vorherige Code-Stand unter `versions/vN/` abgelegt (siehe `versions/README.md`). Die aktuelle Fassung liegt immer im Hauptverzeichnis und wird von Vercel ausgeliefert.
+
+## Logo
+
+Die Logo-Dateien liegen in `assets/logo/`:
+
+- `eastend46-mark.svg`: Kompass-Marke als Vektor (auch Favicon)
+- `eastend46-mark-dark.png` / `eastend46-mark-light.png`: Marke für helle bzw. dunkle Hintergründe
+- `eastend46-logo-dark.png` / `eastend46-logo-light.png`: Marke mit Schriftzug für helle bzw. dunkle Hintergründe
