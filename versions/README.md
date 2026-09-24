@@ -14,6 +14,7 @@ Die Ordner enthalten nur den Code (HTML/CSS/JS), keine Schriften oder Videos. Si
 | `v5/` | Neuer Beratungsfokus (Commit `0099ba7`) | v6: Production-Webhook-URL von n8n in `config.js` eingetragen; Unternehmen ist jetzt Pflichtfeld (nur der Anhang bleibt optional); Datenschutzerklärung um Perplexity ergänzt; importierbare n8n-Dateien entfernt, das README beschreibt den geplanten Workflow. |
 | `v6/` | Mit n8n-Webhook (Commit `69addb9`) | v7: Pflichtfelder mit * markiert; eigene, freundliche Fehlermeldungen direkt am Feld statt Browser-Hinweisen; Anhang nur noch als PDF; nach dem Absenden eine animierte Bestätigung mit dem Hinweis, dass EastEnd46 sich bei passenden Anfragen meldet und keine Bestätigungs-E-Mail verschickt wird. |
 | `v7/` | Mit verbessertem Kontaktformular (Commit `da24968`) | v8: Hero-Video für schnelleren Start komprimiert und durch ein echtes Videoframe als Poster ergänzt; Perspektiven als horizontaler Themen-Slider zu Finanzierung, Nachfolge, M&A und KI ausgebaut. |
+| `v8/` | Mit optimiertem Hero-Video, finalen Perspektivenbildern und der Reihenfolge Nachfolge, M&A, KI, Finanzierung (Commit `bd6762f`) | v9: Warmen Creme-/Messing-Look durch eine weiße Grundfläche, kühle Grau- und Schieferblautöne sowie Anthrazit ersetzt. |
 
 Unterschiede ansehen, zum Beispiel:
 
