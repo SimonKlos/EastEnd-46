@@ -19,6 +19,7 @@ Die Ordner enthalten nur den Code (HTML/CSS/JS), keine Schriften oder Videos. Si
 | `v10/` | White-Slate-Palette mit verstärkten Text- und Akzentkontrasten (Commit `36f3da3`) | v11: Die hellgrauen Flächen der Bereiche Leistungen und Unser Anspruch durch reines Weiß ersetzt. |
 | `v11/` | Durchgehend weiße helle Flächen bei unverändertem Layout (Commit `3041c65`) | v12: Schieferblau auf Weiß weiter abgedunkelt; die Perspektiven Übernahmen & Zusammenschlüsse und Nachfolge & Eigentum auf Position 1 und 2 getauscht. |
 | `v12/` | Kräftigeres Schieferblau und einladendere Perspektivenreihenfolge (Commit `ff2490b`) | v13: Graustichiges Schieferblau durch ein deutlich satteres, tiefes Blau mit starkem Weißkontrast ersetzt. |
+| `v13/` | Sattes Tiefblau auf weißen Flächen (Commit `432cd4c`) | v14: Akzent auf Weiß zu zurückhaltendem Marineblau geändert; Akzente auf dunklen Flächen separat auf sehr helles Grau gesetzt. |
 
 Unterschiede ansehen, zum Beispiel:
 
