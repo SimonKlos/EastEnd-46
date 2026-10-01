@@ -17,6 +17,7 @@ Die Ordner enthalten nur den Code (HTML/CSS/JS), keine Schriften oder Videos. Si
 | `v8/` | Mit optimiertem Hero-Video, finalen Perspektivenbildern und der Reihenfolge Nachfolge, M&A, KI, Finanzierung (Commit `bd6762f`) | v9: Warmen Creme-/Messing-Look durch eine weiße Grundfläche, kühle Grau- und Schieferblautöne sowie Anthrazit ersetzt. |
 | `v9/` | White-Slate-Palette mit weißer Grundfläche, Schieferblau und Anthrazit (Commit `c083186`) | v10: Akzent-, Label- und Sekundärtexte auf hellen Flächen für mehr Präsenz und bessere Lesbarkeit abgedunkelt. |
 | `v10/` | White-Slate-Palette mit verstärkten Text- und Akzentkontrasten (Commit `36f3da3`) | v11: Die hellgrauen Flächen der Bereiche Leistungen und Unser Anspruch durch reines Weiß ersetzt. |
+| `v11/` | Durchgehend weiße helle Flächen bei unverändertem Layout (Commit `3041c65`) | v12: Schieferblau auf Weiß weiter abgedunkelt; die Perspektiven Übernahmen & Zusammenschlüsse und Nachfolge & Eigentum auf Position 1 und 2 getauscht. |
 
 Unterschiede ansehen, zum Beispiel:
 
