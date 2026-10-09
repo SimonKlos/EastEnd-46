@@ -21,6 +21,8 @@ Die Ordner enthalten nur den Code (HTML/CSS/JS), keine Schriften oder Videos. Si
 | `v12/` | Kräftigeres Schieferblau und einladendere Perspektivenreihenfolge (Commit `ff2490b`) | v13: Graustichiges Schieferblau durch ein deutlich satteres, tiefes Blau mit starkem Weißkontrast ersetzt. |
 | `v13/` | Sattes Tiefblau auf weißen Flächen (Commit `432cd4c`) | v14: Akzent auf Weiß zu zurückhaltendem Marineblau geändert; Akzente auf dunklen Flächen separat auf sehr helles Grau gesetzt. |
 
+| `v14/` | Marineblaue Akzente auf Weiß, helle Akzente auf dunklen Flächen (Commit `e49af8a`) | v15: Kompass-Farbe auf Rechtstextseiten korrigiert; Firmenname und neutrale Adress-/Registerplatzhalter vereinheitlicht; Kontaktadresse überall auf info@eastend46.de geändert; Logo auch im geöffneten Mobilmenü sichtbar gehalten; Desktop-/Mobilcheck bei 1440, 390 und 320 px. |
+
 Unterschiede ansehen, zum Beispiel:
 
 ```bash
